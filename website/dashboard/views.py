@@ -20,8 +20,8 @@ def home(request):
         return render(request, 'home.html',{})
     if request.method == 'POST':
         tablename = request.POST['tablename']
-        cursor = connect(aws_access_key_id='***REMOVED***',
-                         aws_secret_access_key='***REMOVED***',
+        cursor = connect(aws_access_key_id='',
+                         aws_secret_access_key='',
                          s3_staging_dir='s3://aws-athena-query-results-565635975808-us-east-2/',
                          region_name='us-east-2').cursor()
         query = "select * from clinic." + tablename + " limit 10"
